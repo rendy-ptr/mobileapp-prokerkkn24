@@ -1,0 +1,31 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model SchoolIdentity {
+  id                    Int      @id @default(autoincrement())
+  namaSekolah           String
+  npsn                  String
+  namaKepalaSekolah     String
+  nip                   String
+  kecamatan             String
+  tanggalKelulusan      String
+  nomorSuratKelulusan   String
+  titiMangsaIjazah      String
+  alamatSekolah         String
+}
+
+model Student {
+  id                   Int      @id @default(autoincrement())
+  namaSiswa            String
+  tempatTanggalLahir   String 
+  kelas                String
+  namaOrangtuaWali     String
+  nomorIndukSiswa      String
+  nisn                 String
+}
